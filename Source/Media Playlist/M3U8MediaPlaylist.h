@@ -20,17 +20,17 @@ typedef enum {
 
 @property (nonatomic, strong) NSString *name;
 
-@property (readonly, nonatomic, strong) NSString *version;
+@property (nonatomic, strong) NSString *version;
 
-@property (readonly, nonatomic, copy) NSString *originalText;
-@property (readonly, nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) NSString *originalText;
+@property (nonatomic, copy) NSURL *baseURL;
 
-@property (readonly, nonatomic, copy) NSURL *originalURL;
+@property (nonatomic, copy) NSURL *originalURL;
 
-@property (readonly, nonatomic, strong) M3U8SegmentInfoList *segmentList;
+@property (nonatomic, strong) M3U8SegmentInfoList *segmentList;
 
 /** live or replay */
-@property (assign, readonly, nonatomic) BOOL isLive;
+@property (assign,  nonatomic) BOOL isLive;
 
 @property (nonatomic) M3U8MediaPlaylistType type;   // -1 by default
 

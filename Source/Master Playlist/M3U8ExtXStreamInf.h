@@ -47,15 +47,15 @@ NSString * NSStringFromMediaResolution(MediaResoulution resolution);
  */
 @interface M3U8ExtXStreamInf : NSObject
 
-@property (nonatomic, readonly, assign) NSInteger bandwidth;
-@property (nonatomic, readonly, assign) NSInteger programId;        // removed by draft 12
-@property (nonatomic, readonly, copy) NSArray *codecs;
+@property (nonatomic,  assign) NSInteger bandwidth;
+@property (nonatomic,  assign) NSInteger programId;        // removed by draft 12
+@property (nonatomic,  copy) NSArray *codecs;
 @property (nonatomic, readonly) MediaResoulution resolution;
-@property (nonatomic, readonly, copy) NSString *audio;
-@property (nonatomic, readonly, copy) NSString *video;
-@property (nonatomic, readonly, copy) NSString *subtitles;
-@property (nonatomic, readonly, copy) NSString *closedCaptions;
-@property (nonatomic, readonly, copy) NSURL   *URI;
+@property (nonatomic,  copy) NSString *audio;
+@property (nonatomic,  copy) NSString *video;
+@property (nonatomic,  copy) NSString *subtitles;
+@property (nonatomic,  copy) NSString *closedCaptions;
+@property (nonatomic,  copy) NSURL   *URI;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

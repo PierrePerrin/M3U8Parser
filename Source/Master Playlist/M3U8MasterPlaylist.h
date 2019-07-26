@@ -15,16 +15,16 @@
 
 @property (nonatomic, strong) NSString *name;
 
-@property (readonly, nonatomic, strong) NSString *version;
+@property (nonatomic, strong) NSString *version;
 
-@property (readonly, nonatomic, copy) NSString *originalText;
-@property (readonly, nonatomic, copy) NSURL *baseURL;
-@property (readonly, nonatomic, copy) NSURL *originalURL;
+@property (nonatomic, copy) NSString *originalText;
+@property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) NSURL *originalURL;
 
-@property (readonly, nonatomic, strong) M3U8ExtXKey *xSessionKey;
+@property (nonatomic, strong) M3U8ExtXKey *xSessionKey;
 
-@property (readonly, nonatomic, strong) M3U8ExtXStreamInfList *xStreamList;
-@property (readonly, nonatomic, strong) M3U8ExtXMediaList *xMediaList;
+@property (nonatomic, strong) M3U8ExtXStreamInfList *xStreamList;
+@property (nonatomic, strong) M3U8ExtXMediaList *xMediaList;
 
 - (NSArray *)allStreamURLs;
 

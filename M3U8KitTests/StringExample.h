@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface StringExample : NSObject
 
 /** master */
-@property (copy, readonly, nonatomic) NSString *m3u8Master;
+@property (copy,  nonatomic) NSString *m3u8Master;
 
 /** playlist */
-@property (copy, readonly, nonatomic) NSString *m3u8Playlist;
+@property (copy,  nonatomic) NSString *m3u8Playlist;
 
 @end
 

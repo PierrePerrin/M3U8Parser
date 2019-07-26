@@ -26,10 +26,10 @@
  */
 @interface M3U8SegmentInfo : NSObject
 
-@property (readonly, nonatomic) NSTimeInterval duration;
-@property (readonly, nonatomic, copy) NSURL *URI;
+@property (nonatomic) NSTimeInterval duration;
+@property (nonatomic, copy) NSURL *URI;
 /** Key for media data decrytion. may be for this segment or next if no key. */
-@property (readonly, readonly, nonatomic) M3U8ExtXKey *xKey;
+@property ( nonatomic) M3U8ExtXKey *xKey;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

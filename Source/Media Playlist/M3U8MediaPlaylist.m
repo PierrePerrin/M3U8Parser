@@ -12,19 +12,6 @@
 #import "NSURL+m3u8.h"
 #import "M3U8LineReader.h"
 
-@interface M3U8MediaPlaylist()
-
-@property (nonatomic, copy) NSString *originalText;
-@property (nonatomic, copy) NSURL *baseURL;
-@property (nonatomic, copy) NSURL *originalURL;
-
-@property (nonatomic, strong) NSString *version;
-
-@property (nonatomic, strong) M3U8SegmentInfoList *segmentList;
-
-@property (assign, nonatomic) BOOL isLive;
-
-@end
 
 @implementation M3U8MediaPlaylist
 

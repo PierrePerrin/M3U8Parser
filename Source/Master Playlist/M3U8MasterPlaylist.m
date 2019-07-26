@@ -14,20 +14,6 @@
 // #define M3U8_EXT_X_STREAM_INF_CLOSED_CAPTIONS   @"CLOSED-CAPTIONS" // The value can be either a quoted-string or an enumerated-string with the value NONE.
 //    NSArray *quotedValueAttrs = @[@"URI", @"KEYFORMAT", @"KEYFORMATVERSIONS", @"GROUP-ID", @"LANGUAGE", @"ASSOC-LANGUAGE", @"NAME", @"INSTREAM-ID", @"CHARACTERISTICS", @"CODECS", @"AUDIO", @"VIDEO", @"SUBTITLES", @"BYTERANGE"];
 
-@interface M3U8MasterPlaylist ()
-
-@property (nonatomic, copy) NSString *originalText;
-@property (nonatomic, copy) NSURL *baseURL;
-@property (nonatomic, copy) NSURL *originalURL;
-
-@property (nonatomic, strong) NSString *version;
-
-@property (nonatomic, strong) M3U8ExtXKey *xSessionKey;
-
-@property (nonatomic, strong) M3U8ExtXStreamInfList *xStreamList;
-@property (nonatomic, strong) M3U8ExtXMediaList *xMediaList;
-
-@end
 
 @implementation M3U8MasterPlaylist
 

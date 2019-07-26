@@ -9,8 +9,8 @@
 
 @interface M3U8LineReader : NSObject
     
-@property (nonatomic, readonly, strong) NSArray<NSString*>* lines;
-@property (atomic, readonly, assign) NSUInteger index;
+@property (nonatomic,  strong) NSArray<NSString*>* lines;
+@property (atomic,  assign) NSUInteger index;
     
 - (instancetype)initWithText:(NSString*)text;
 - (NSString*)next;

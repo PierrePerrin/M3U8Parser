@@ -18,16 +18,7 @@
 
 @interface M3U8PlaylistModel()
 
-@property (nonatomic, copy) NSURL *baseURL;
-@property (nonatomic, copy) NSURL *originalURL;
-
-@property (nonatomic, strong) M3U8MasterPlaylist *masterPlaylist;
-
 @property (nonatomic, strong) M3U8ExtXStreamInf *currentXStreamInf;
-
-@property (nonatomic, strong) M3U8MediaPlaylist *mainMediaPl;
-@property (nonatomic, strong) M3U8MediaPlaylist *audioPl;
-//@property (nonatomic, strong) M3U8MediaPlaylist *subtitlePl;
 
 @end
 

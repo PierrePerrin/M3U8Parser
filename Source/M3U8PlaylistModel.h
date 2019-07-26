@@ -34,18 +34,18 @@
 
 @interface M3U8PlaylistModel : NSObject
 
-@property (readonly, nonatomic, copy) NSURL *baseURL;
-@property (readonly, nonatomic, copy) NSURL *originalURL;
+@property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) NSURL *originalURL;
 
 // 如果初始化时的字符串是 media playlist, masterPlaylist为nil
 // M3U8PlaylistModel 默认会按照《需要下载的内容》规则选取默认的playlist，如果需要手动指定获取特定的media playlist, 需调用方法 -specifyVideoURL:(这个在选取视频源的时候会用到);
 
-@property (readonly, nonatomic, strong) M3U8MasterPlaylist *masterPlaylist;
+@property (nonatomic, strong) M3U8MasterPlaylist *masterPlaylist;
 
-@property (readonly, nonatomic, strong) M3U8MediaPlaylist *mainMediaPl;
+@property (nonatomic, strong) M3U8MediaPlaylist *mainMediaPl;
 - (void)changeMainMediaPlWithPlaylist:(M3U8MediaPlaylist *)playlist;
-@property (readonly, nonatomic, strong) M3U8MediaPlaylist *audioPl;
-//@property (readonly, nonatomic, strong) M3U8MediaPlaylist *subtitlePl;
+@property (nonatomic, strong) M3U8MediaPlaylist *audioPl;
+//@property (nonatomic, strong) M3U8MediaPlaylist *subtitlePl;
 
 /**
  this method is synchronous. so may be **block your thread** that call this method.
