@@ -113,20 +113,22 @@ MediaResoulution MediaResolutionMake(float width, float height) {
 - (NSString *)m3u8PlanString {
     NSMutableString *str = [NSMutableString string];
     [str appendString:M3U8_EXT_X_STREAM_INF];
-    if (self.audio.length > 0) {
-        [str appendString:[NSString stringWithFormat:@"AUDIO=\"%@\"", self.audio]];
-        [str appendString:[NSString stringWithFormat:@",BANDWIDTH=%ld", (long)self.bandwidth]];
-    } else {
-        [str appendString:[NSString stringWithFormat:@"BANDWIDTH=%ld", (long)self.bandwidth]];
-    }
-    
+ 
     [str appendString:[NSString stringWithFormat:@",PROGRAM-ID=%ld", (long)self.programId]];
+    [str appendString:[NSString stringWithFormat:@"BANDWIDTH=%ld", (long)self.bandwidth]];
     NSString *codecsString = self.dictionary[M3U8_EXT_X_STREAM_INF_CODECS];
     [str appendString:[NSString stringWithFormat:@",CODECS=\"%@\"", codecsString]];
+    
+    if (self.audio.length > 0)
+        [str appendString:[NSString stringWithFormat:@"AUDIO=\"%@\"", self.audio]];
+    
+    if (self.subtitles.length > 0)
+        [str appendString:[NSString stringWithFormat:@"SUBTITLES=\"%@\"", self.subtitles]];
+    
     NSString *rStr = self.dictionary[M3U8_EXT_X_STREAM_INF_RESOLUTION];
-    if (rStr.length > 0) {
+    if (rStr.length > 0)
         [str appendString:[NSString stringWithFormat:@",RESOLUTION=%@", rStr]];
-    }
+
     [str appendString:[NSString stringWithFormat:@"\n%@", self.URI.absoluteString]];
     return str;
 }
