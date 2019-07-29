@@ -172,7 +172,7 @@
     [str appendString:@"\n"];
     if (self.version.length > 0) {
         [str appendString:[NSString stringWithFormat:@"%@%@", M3U8_EXT_X_VERSION, self.version]];
-        [str appendString:@"\n"];
+        [str appendString:@"\n\n"];
     }
     for (NSInteger index = 0; index < self.xStreamList.count; index ++) {
         M3U8ExtXStreamInf *xsinf = [self.xStreamList xStreamInfAtIndex:index];
@@ -181,9 +181,25 @@
     }
     
     M3U8ExtXMediaList *audioList = self.xMediaList.audioList;
+    
+    
     for (NSInteger i = 0; i < audioList.count; i ++) {
-        NSLog(@"ext x media %ld", (long)i);
+        
+        if (i == 0)
+        [str appendString:@"\n#Audios\n\n"];
+        
         M3U8ExtXMedia *media = [audioList xMediaAtIndex:i];
+        [str appendString:media.m3u8PlanString];
+        [str appendString:@"\n"];
+    }
+    
+    M3U8ExtXMediaList *subtitleList = self.xMediaList.subtitleList;
+    for (NSInteger i = 0; i < subtitleList.count; i ++) {
+        
+        if (i == 0)
+        [str appendString:@"\n#Subtitles\n\n"];
+        
+        M3U8ExtXMedia *media = [subtitleList xMediaAtIndex:i];
         [str appendString:media.m3u8PlanString];
         [str appendString:@"\n"];
     }
