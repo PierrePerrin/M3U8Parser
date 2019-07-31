@@ -114,8 +114,8 @@ MediaResoulution MediaResolutionMake(float width, float height) {
     NSMutableString *str = [NSMutableString string];
     [str appendString:M3U8_EXT_X_STREAM_INF];
  
-    [str appendString:[NSString stringWithFormat:@",PROGRAM-ID=%ld", (long)self.programId]];
-    [str appendString:[NSString stringWithFormat:@"BANDWIDTH=%ld", (long)self.bandwidth]];
+    [str appendString:[NSString stringWithFormat:@"PROGRAM-ID=%ld", (long)self.programId]];
+    [str appendString:[NSString stringWithFormat:@",BANDWIDTH=%ld", (long)self.bandwidth]];
     NSString *codecsString = self.dictionary[M3U8_EXT_X_STREAM_INF_CODECS];
     [str appendString:[NSString stringWithFormat:@",CODECS=\"%@\"", codecsString]];
     
