@@ -120,10 +120,10 @@ MediaResoulution MediaResolutionMake(float width, float height) {
     [str appendString:[NSString stringWithFormat:@",CODECS=\"%@\"", codecsString]];
     
     if (self.audio.length > 0)
-        [str appendString:[NSString stringWithFormat:@"AUDIO=\"%@\"", self.audio]];
+        [str appendString:[NSString stringWithFormat:@",AUDIO=\"%@\"", self.audio]];
     
     if (self.subtitles.length > 0)
-        [str appendString:[NSString stringWithFormat:@"SUBTITLES=\"%@\"", self.subtitles]];
+        [str appendString:[NSString stringWithFormat:@",SUBTITLES=\"%@\"", self.subtitles]];
     
     NSString *rStr = self.dictionary[M3U8_EXT_X_STREAM_INF_RESOLUTION];
     if (rStr.length > 0)
